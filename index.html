@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SRM-IST GPA (2018-2022)</title>
+  
+  <!--  Styles  -->
+  <link rel="stylesheet" href="styles/index.processed.css">
+</head>
+<body>
+  <h2 style="font-family:Courier;text-align:center;">Grade Point Average Calculator</h2>
+  <hr>
+  <div style="border:2px solid black;border-radius:4px;background-color:silver;text-align:justify;height: 150px; width: 50%; margin:auto;padding-left:10px;padding-right:10px;">
+    <p>This Calculator is designed to calculate the grade point average of the semesters at the SRM Institute of Science & Technology. Both CGPA (Cummulative Grade Point Average) and SGPA (Semester Grade Point Average) can be calculated using this application.
+    </p>
+    <div style="margin:auto;">
+      <button id="sgpa" style="margin: 0;position: absolute;left: 40%;-ms-transform: translateX(-50%);transform: translateX(-50%);" onClick="sgpa()">SGPA</button>
+      <button id="cgpa" style="margin: 0;position: absolute;left: 50%;-ms-transform: translateX(-50%);transform: translateX(-50%);" onClick="cgpa()">CGPA</button>
+      <button id="cgpa" style="margin: 0;position: absolute;left: 60%;-ms-transform: translateX(-50%);transform: translateX(-50%);" onClick="rst()">Reset!</button>
+    </div><br>
+    <p style="text-align:center">
+      <label id="ind">Select one of the given options to calculate grade point average.</label>
+    </p>
+  </div><br>
+  <div style="display: grid;grid-template-columns: 1fr 1fr;grid-column-gap: 5px;border:2px solid black;background:white;padding:5px;">
+    <div id="b1" style="height: 365px;width:100%;margin:auto;border:2px solid black;visibility:hidden;">
+      <h3 style="font-family:courier;text-align:center;">SGPA Calculator</h3>
+      <p style="text-align:center;">
+        Enter individual course credits and grades obtained in each course.
+      </p>
+      <label id="s1" style="padding-left:7px;">(Subject 1) Credits:</label>
+      <input type="text" id="s1c" placeholder="Enter subject credits">
+      <label id="s2" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s1g" placeholder="Enter alphabetic grade"><br>
+      <label id="s3" style="padding-left:7px;">(Subject 2) Credits:</label>
+      <input type="text" id="s2c" placeholder="Enter subject credits">
+      <label id="s4" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s2g" placeholder="Enter alphabetic grade"><br>
+      <label id="s5" style="padding-left:7px;">(Subject 3) Credits:</label>
+      <input type="text" id="s3c" placeholder="Enter subject credits">
+      <label id="s6" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s3g" placeholder="Enter alphabetic grade"><br>
+      <label id="s7" style="padding-left:7px;">(Subject 4) Credits:</label>
+      <input type="text" id="s4c" placeholder="Enter subject credits">
+      <label id="s8" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s4g" placeholder="Enter alphabetic grade"><br>
+      <label id="s9" style="padding-left:7px;">(Subject 5) Credits:</label>
+      <input type="text" id="s5c" placeholder="Enter subject credits">
+      <label id="s10" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s5g" placeholder="Enter alphabetic grade"><br>
+      <label id="s11" style="padding-left:7px;">(Subject 6) Credits:</label>
+      <input type="text" id="s6c" placeholder="Enter subject credits">
+      <label id="s12" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s6g" placeholder="Enter alphabetic grade"><br>
+      <label id="s13" style="padding-left:7px;">(Subject 7) Credits:</label>
+      <input type="text" id="s7c" placeholder="Enter subject credits">
+      <label id="s14" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s7g" placeholder="Enter alphabetic grade"><br>
+      <label id="s15" style="padding-left:7px;">(Subject 8) Credits:</label>
+      <input type="text" id="s8c" placeholder="Enter subject credits">
+      <label id="s16" style="padding-left:2px;">Grades Obtained:</label>
+      <input type="text" id="s8g" placeholder="Enter alphabetic grade"><br><br>
+      <div>
+        <button type="button" id="cal1" onClick()="myFunc1()" style="margin: 0;position: absolute;left: 20%;-ms-transform: translateX(-50%);transform: translateX(-50%);">Calculate</button>
+        <button type="button" id="rst1" onClick()="myCrest()" style="margin: 0;position: absolute;left: 30%;-ms-transform: translateX(-50%);transform: translateX(-50%);">Reset</button>
+      </div><br>
+      <div id="r1" style="height:50px;width:97%;background:silver;border:2px solid black;margin-left:5px;">
+        <h2 style="text-align:center;">Obtained SGPA: <label id="cgpav">X.XY</label></h2>
+      </div>
+    </div>
+    <div id="b2" style="height:365px;width:100%;margin:auto;border:2px solid black;visibility:hidden;">
+      <h3 style="font-family:courier;text-align:center;">CGPA Calculator</h3>
+      <p style="text-align:center;">
+        Enter individual semester GPA and total credits obtained in each semester.
+      </p>
+      <label id="c1" style="padding-left:7px;">(Semester 1) Credits:</label>
+      <input type="text" id="c1c" placeholder="Enter semester total credits">
+      <label id="c2" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c1g" placeholder="Enter alphabetic grade"><br>
+      <label id="c3" style="padding-left:7px;">(Semester 2) Credits:</label>
+      <input type="text" id="c2c" placeholder="Enter semester total credits">
+      <label id="c4" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c2g" placeholder="Enter alphabetic grade"><br>
+      <label id="c5" style="padding-left:7px;">(Semester 3) Credits:</label>
+      <input type="text" id="c3c" placeholder="Enter semester total credits">
+      <label id="c6" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c3g" placeholder="Enter alphabetic grade"><br>
+      <label id="c7" style="padding-left:7px;">(Semester 4) Credits:</label>
+      <input type="text" id="c4c" placeholder="Enter semester total credits">
+      <label id="c8" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c4g" placeholder="Enter alphabetic grade"><br>
+      <label id="c9" style="padding-left:7px;">(Semester 5) Credits:</label>
+      <input type="text" id="c5c" placeholder="Enter semester total credits">
+      <label id="c10" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c5g" placeholder="Enter alphabetic grade"><br>
+      <label id="c11" style="padding-left:7px;">(Semester 6) Credits:</label>
+      <input type="text" id="c6c" placeholder="Enter semester total credits">
+      <label id="c12" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c6g" placeholder="Enter alphabetic grade"><br>
+      <label id="c13" style="padding-left:7px;">(Semester 7) Credits:</label>
+      <input type="text" id="c7c" placeholder="Enter semester total credits">
+      <label id="c14" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c7g" placeholder="Enter alphabetic grade"><br>
+      <label id="c15" style="padding-left:7px;">(Semester 8) Credits:</label>
+      <input type="text" id="c8c" placeholder="Enter semester total credits">
+      <label id="c16" style="padding-left:2px;">SGPA Obtained:</label>
+      <input type="text" id="c8g" placeholder="Enter alphabetic grade"><br><br>
+      <div style="margin-left:auto;">
+        <button id="cal2" onClick()="cgpac()" style="margin: 0;position: absolute;left: 70%;-ms-transform: translateX(-50%);transform: translateX(-50%);">Calculate</button>
+        <button id="rst1" onClick()="crest()" style="margin: 0;position: absolute;left: 80%;-ms-transform: translateX(-50%);transform: translateX(-50%);">Reset</button>
+      </div><br>
+      <div id ="r2" style="height:50px;width:97%;background:silver;border:2px solid black;margin-left:5px;">
+        <h2 style="text-align:center;">Obtained CGPA: <label id="cgpav">X.XY</label></h2>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div style="padding-left:5px;padding-right:5px;margin:auto;background-color:#89cff0;border-radius: 4px;height:165px;width:500px;border:2px solid blue">
+				<h2 style="text-align:center">
+					That's about it..
+				</h2>
+				<p style="text-align:justify;">
+					This site was designed with the sole purpose of developing the creator's web dev skills and contains elements and assests that do not belong to the author.
+				</p>
+				<p style="text-align:center;">
+          <a href="https://www.github.com/sts-ss">
+            <img alt="Logo" src="styles/logo.jpg" style="width:100px;height:30px;border: 2px solid #555;">
+          </a>
+				</p>
+			</div>
+  <script src="scripts/index.js"></script>
+</body>
+</html>
