@@ -1,8 +1,3 @@
-/**
- * index.js
- * - All our useful JS goes here, awesome!
- */
-
 console.log("JavaScript is amazing!");
 
 function sgpa(){
@@ -21,18 +16,10 @@ function rst(){
   document.getElementById('ind').innerHTML = 'Select one of the given options to calculate grade point average.'; 
 }
 
-function myFunc1(){
-  var x = (10 + 12)/10;
-  document.getElementById('sgpav').innerHTML = x;
-}
+document.getElementById("rst1").addEventListener("click", function() { //CGPA Reset Button
+  document.getElementById("ind").innerHTML = "Hello World 1";
+});
 
-function myFunc2(){
-  var y = (10+13)/10;
-  document.getElementById('cgpav').innerHTML = y;
-}
-
-function myCrest(){
-  r1.style.visibility = 'hidden';
-  r2.style.visibility = 'hidden';
-  
-}
+document.getElementById("rst2").addEventListener("click", function() { //SGPA Reset Button
+  document.getElementById("ind").innerHTML = "Hello World 2";
+});
