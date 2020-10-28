@@ -17,23 +17,14 @@ function rst() {
     "Select one of the given options to calculate grade point average.";
 }
 
-function clear() {
+function calc() {
   document.getElementById("ind").value = "IDK.IDC";
 }
 
 document.getElementById("sgpa").addEventListener("click", sgpa);
 document.getElementById("cgpa").addEventListener("click", cgpa);
-docuemnt.getElementById("rst0").addEventListener("click", rst);
+document.getElementById("rst0").addEventListener("click", rst);
 document.getElementById("cal1").addEventListener("click", calc);
-
-document.getElementById("cal2").addEventListener("click", clear);
-
-document.getElementById("rst1").addEventListener("click", function() {
-  //CGPA Reset Button
-  document.getElementById("ind").innerHTML = "Hello World 1";
-});
-
-document.getElementById("rst2").addEventListener("click", function() {
-  //SGPA Reset Button
-  document.getElementById("ind").innerHTML = "Hello World 2";
-});
+document.getElementById("cal2").addEventListener("click", calc);
+document.getElementById("rst1").addEventListener("click", clear1);
+document.getElementById("rst2").addEventListener("click", clear2);
